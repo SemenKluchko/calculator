@@ -18,7 +18,12 @@ function App() {
   // calculating the values by clicking the equal sign
   const calculate = () => {
     checkingOps();
-    if (calc) setCalc(eval(calc).toString());
+    try {
+      setCalc(eval(calc).toString());
+    }
+    catch {
+      setCalc('');
+    }
   }
 
   const clearCalc = () => {
